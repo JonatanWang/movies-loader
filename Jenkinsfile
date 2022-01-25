@@ -1,5 +1,9 @@
 node ('workers') {
     stage('Checkout') {
-        checkout scm
+        steps {
+            git branch: 'develop',
+                credentialsId: 'github-ssh',
+                url: 'git@github.com:JonatanWang/movies-loader.git'
+        }
     }
 }
